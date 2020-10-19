@@ -2,29 +2,24 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 class Form extends Component {
-  constructor() {
-    super();
-    this.initialState = {
-      name: "",
-      job: "",
-    };
-    this.state = this.initialState;
+  initialState = {
+    name: "",
+    job: "",
+  };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.submitForm = this.submitForm.bind(this);
-  }
+  state = this.initialState;
 
-  handleChange(event) {
+  handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
       [name]: value,
     });
-  }
+  };
 
-  submitForm() {
+  submitForm = () => {
     this.props.handleSubmit(this.state);
     this.setState(this.initialState);
-  }
+  };
 
   render() {
     const { name, job } = this.state;

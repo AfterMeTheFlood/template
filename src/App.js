@@ -4,31 +4,26 @@ import Table from "./Table";
 import Form from "./Form";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      characters: [
-        {
-          name: "Charlie",
-          job: "Janitor",
-        },
-        {
-          name: "Mac",
-          job: "Bouncer",
-        },
-        {
-          name: "Dee",
-          job: "Aspring actress",
-        },
-        {
-          name: "Dennis",
-          job: "Bartender",
-        },
-      ],
-    };
-    this.removeCharacter = this.removeCharacter.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  state = {
+    characters: [
+      {
+        name: "Charlie",
+        job: "Janitor",
+      },
+      {
+        name: "Mac",
+        job: "Bouncer",
+      },
+      {
+        name: "Dee",
+        job: "Aspring actress",
+      },
+      {
+        name: "Dennis",
+        job: "Bartender",
+      },
+    ],
+  };
 
   componentDidMount() {
     const url =
@@ -42,20 +37,20 @@ class App extends Component {
       });
   }
 
-  removeCharacter(index) {
+  removeCharacter = (index) => {
     const { characters } = this.state;
     this.setState({
       characters: characters.filter((character, i) => {
         return i !== index;
       }),
     });
-  }
+  };
 
-  handleSubmit(character) {
+  handleSubmit = (character) => {
     this.setState({
       characters: [...this.state.characters, character],
     });
-  }
+  };
 
   render() {
     const { characters } = this.state;

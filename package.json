@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack serve --env development",
     "build": "webpack --env production",
-    "lint": "eslint ."
+    "lint": "prettier --write . &&  eslint ."
   },
   "dependencies": {
     "lodash": "^4.17.20",
@@ -22,6 +22,7 @@
     "eslint": "^7.11.0",
     "eslint-plugin-react": "^7.21.4",
     "html-webpack-plugin": "^5.0.0-alpha.5",
+    "prettier": "^2.1.2",
     "style-loader": "^2.0.0",
     "webpack": "^5.1.3",
     "webpack-cli": "^4.0.0",

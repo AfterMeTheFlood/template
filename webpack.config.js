@@ -13,6 +13,7 @@ const commonConfig = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Template",
+      template: "./src/index.html",
     }),
   ],
   stats: {
@@ -20,6 +21,13 @@ const commonConfig = {
   },
   module: {
     rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],

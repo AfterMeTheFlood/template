@@ -1,13 +1,16 @@
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import _ from "lodash";
 import "./style.css";
 
-function component() {
-  const element = document.createElement("div");
-
-  element.innerHTML = _.join(["Hello", "Web"], " ");
-  element.classList.add("hello");
-
-  return element;
+class App extends Component {
+  render() {
+    return (
+      <div className="hello">
+        <h1>{_.join(["Hello", "Web"], " ")}</h1>
+      </div>
+    );
+  }
 }
 
-document.body.appendChild(component());
+ReactDOM.render(<App />, document.getElementById("root"));
